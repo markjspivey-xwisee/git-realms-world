@@ -1,0 +1,1 @@
+This directory contains quest definitions for the game world.
