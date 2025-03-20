@@ -1,0 +1,1 @@
+This directory contains region definitions for the game world.
