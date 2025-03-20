@@ -1,0 +1,1 @@
+This directory contains item definitions for the game world.
