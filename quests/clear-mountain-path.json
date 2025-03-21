@@ -1,0 +1,96 @@
+{
+  "id": "clear-mountain-path",
+  "name": "Clear the Mountain Path",
+  "description": "The path leading to the Mountain Pass has been blocked by rockslides and is now crawling with dangerous creatures. Clear the path to enable travel between the Forest of Shadows and the Mountain Pass.",
+  "type": "region_unlock",
+  "difficulty": "medium",
+  "level_requirement": 4,
+  "repeatable": false,
+  "prerequisite_quests": ["forest-exploration"],
+  "region": "forest-of-shadows",
+  "start_location": {
+    "type": "npc",
+    "id": "village-elder"
+  },
+  "end_location": {
+    "type": "point_of_interest",
+    "id": "mountain-path-entrance",
+    "region": "forest-of-shadows"
+  },
+  "objectives": [
+    {
+      "id": "defeat-creatures",
+      "description": "Defeat 10 creatures lurking on the blocked path",
+      "type": "kill",
+      "target": ["rock-crawler", "mountain-goblin"],
+      "count": 10,
+      "completion_text": "You've cleared out the creatures making the path dangerous."
+    },
+    {
+      "id": "clear-rockslide",
+      "description": "Clear the rockslide blocking the path",
+      "type": "interact",
+      "target": "rockslide",
+      "required_items": [
+        {"id": "pickaxe", "consume": false}
+      ],
+      "completion_text": "With considerable effort, you've cleared away the rocks blocking the path."
+    },
+    {
+      "id": "report-completion",
+      "description": "Report back to the Village Elder",
+      "type": "talk",
+      "target": "village-elder",
+      "completion_text": "The Village Elder thanks you for your service to the community."
+    }
+  ],
+  "rewards": {
+    "experience": 350,
+    "gold": 150,
+    "items": [
+      {"id": "traveler-boots", "quantity": 1},
+      {"id": "health-potion", "quantity": 3}
+    ],
+    "reputation": [
+      {"faction": "village", "amount": 50}
+    ],
+    "unlocks": [
+      {"type": "region", "id": "mountain-pass"}
+    ]
+  },
+  "failure_conditions": [
+    {"type": "player_death", "reset_progress": true}
+  ],
+  "time_limit": null,
+  "dialogue": {
+    "offer": [
+      {
+        "npc": "village-elder",
+        "text": "Greetings, traveler. Our village has a problem that requires someone of your talents."
+      },
+      {
+        "npc": "village-elder",
+        "text": "The path to the Mountain Pass has been blocked by rockslides, and dangerous creatures have made it their home."
+      },
+      {
+        "npc": "village-elder",
+        "text": "Clear the path and you'll be rewarded handsomely. Plus, you'll gain access to the Mountain Pass, which leads to valuable resources."
+      }
+    ],
+    "completion": [
+      {
+        "npc": "village-elder",
+        "text": "Excellent work! You've cleared the path and made travel safer for everyone."
+      },
+      {
+        "npc": "village-elder",
+        "text": "As promised, here's your reward. The Mountain Pass is now accessible to you. Safe travels!"
+      }
+    ]
+  },
+  "created_by": "gamemaster",
+  "created_on": "2025-02-15T10:23:45Z",
+  "last_updated": "2025-03-05T16:12:30Z",
+  "version": 2,
+  "active": true
+}
