@@ -1,0 +1,147 @@
+{
+  "item_type": "weapons",
+  "last_updated": "2025-03-10T09:30:00Z",
+  "last_updated_by": "gamemaster",
+  "version": 5,
+  "items": [
+    {
+      "id": "iron-sword",
+      "name": "Iron Sword",
+      "description": "A basic but reliable iron sword. Standard issue for beginning adventurers.",
+      "category": "weapon",
+      "subcategory": "sword",
+      "rarity": "common",
+      "level_requirement": 1,
+      "durability": {
+        "max": 100,
+        "current": 100,
+        "degrade_rate": 1
+      },
+      "stats": {
+        "damage": {
+          "min": 3,
+          "max": 6
+        },
+        "attack_speed": 1.2,
+        "critical_chance": 0.05,
+        "critical_multiplier": 1.5
+      },
+      "attributes": ["slashing"],
+      "base_value": 25,
+      "weight": 3.5,
+      "crafting": {
+        "materials": [
+          {"id": "iron-ingot", "quantity": 2},
+          {"id": "leather-strip", "quantity": 1},
+          {"id": "wooden-hilt", "quantity": 1}
+        ],
+        "skill_requirement": {
+          "blacksmithing": 1
+        },
+        "facility": "forge"
+      },
+      "appearance": {
+        "model": "iron-sword",
+        "icon": "iron-sword-icon"
+      }
+    },
+    {
+      "id": "elven-bow",
+      "name": "Elven Bow",
+      "description": "A finely crafted bow of elven design. Provides excellent accuracy at long range.",
+      "category": "weapon",
+      "subcategory": "bow",
+      "rarity": "uncommon",
+      "level_requirement": 5,
+      "durability": {
+        "max": 80,
+        "current": 80,
+        "degrade_rate": 0.5
+      },
+      "stats": {
+        "damage": {
+          "min": 5,
+          "max": 9
+        },
+        "attack_speed": 0.9,
+        "critical_chance": 0.08,
+        "critical_multiplier": 2.0,
+        "range": 40
+      },
+      "attributes": ["piercing", "ranged"],
+      "base_value": 120,
+      "weight": 1.8,
+      "crafting": {
+        "materials": [
+          {"id": "elven-wood", "quantity": 3},
+          {"id": "silk-string", "quantity": 1},
+          {"id": "leather-grip", "quantity": 1}
+        ],
+        "skill_requirement": {
+          "bowcraft": 3,
+          "woodworking": 2
+        },
+        "facility": "woodworking-table"
+      },
+      "appearance": {
+        "model": "elven-bow",
+        "icon": "elven-bow-icon"
+      }
+    },
+    {
+      "id": "shadow-dagger",
+      "name": "Shadow Dagger",
+      "description": "A mysterious dagger that seems to absorb light. Occasionally inflicts a bleeding effect.",
+      "category": "weapon",
+      "subcategory": "dagger",
+      "rarity": "rare",
+      "level_requirement": 8,
+      "durability": {
+        "max": 60,
+        "current": 60,
+        "degrade_rate": 0.7
+      },
+      "stats": {
+        "damage": {
+          "min": 4,
+          "max": 7
+        },
+        "attack_speed": 1.8,
+        "critical_chance": 0.15,
+        "critical_multiplier": 2.5
+      },
+      "special_effects": [
+        {
+          "type": "bleed",
+          "chance": 0.3,
+          "damage": 2,
+          "duration": 3
+        },
+        {
+          "type": "stealth_bonus",
+          "value": 10
+        }
+      ],
+      "attributes": ["piercing", "slashing", "shadow"],
+      "base_value": 350,
+      "weight": 1.2,
+      "crafting": {
+        "materials": [
+          {"id": "shadow-steel", "quantity": 1},
+          {"id": "void-essence", "quantity": 2},
+          {"id": "leather-strip", "quantity": 1}
+        ],
+        "skill_requirement": {
+          "blacksmithing": 5,
+          "shadow-infusion": 3
+        },
+        "facility": "arcane-forge"
+      },
+      "appearance": {
+        "model": "shadow-dagger",
+        "icon": "shadow-dagger-icon"
+      },
+      "lore": "Those who wield this dagger report hearing whispers from the shadows. The blade was forged in darkness and tempered with void essence."
+    }
+  ]
+}
