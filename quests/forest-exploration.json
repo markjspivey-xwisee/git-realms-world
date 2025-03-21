@@ -1,0 +1,103 @@
+{
+  "id": "forest-exploration",
+  "name": "Forest Exploration",
+  "description": "The Village Elder has asked you to explore the Forest of Shadows and report back on what you find. This will help you become familiar with the dangers and resources of the forest.",
+  "type": "exploration",
+  "difficulty": "easy",
+  "level_requirement": 1,
+  "repeatable": false,
+  "prerequisite_quests": [],
+  "region": "forest-of-shadows",
+  "start_location": {
+    "type": "npc",
+    "id": "village-elder"
+  },
+  "end_location": {
+    "type": "npc",
+    "id": "village-elder"
+  },
+  "objectives": [
+    {
+      "id": "find-ancient-oak",
+      "description": "Find the Ancient Oak in the Forest of Shadows",
+      "type": "discover",
+      "target": "ancient-oak",
+      "completion_text": "You've found the Ancient Oak, an impressive landmark in the forest."
+    },
+    {
+      "id": "investigate-cabin",
+      "description": "Investigate the Abandoned Cabin",
+      "type": "discover",
+      "target": "abandoned-cabin",
+      "completion_text": "The abandoned cabin appears to have been left in a hurry. You find some useful items inside."
+    },
+    {
+      "id": "collect-herbs",
+      "description": "Collect 5 herbs from the forest",
+      "type": "collect",
+      "target": "herbs",
+      "count": 5,
+      "completion_text": "You've gathered a variety of herbs that could be useful for crafting potions."
+    },
+    {
+      "id": "report-findings",
+      "description": "Return to the Village Elder with your findings",
+      "type": "talk",
+      "target": "village-elder",
+      "completion_text": "You share what you've learned about the Forest of Shadows with the Village Elder."
+    }
+  ],
+  "rewards": {
+    "experience": 150,
+    "gold": 50,
+    "items": [
+      {"id": "leather-gloves", "quantity": 1},
+      {"id": "healing-herbs", "quantity": 2}
+    ],
+    "reputation": [
+      {"faction": "village", "amount": 25}
+    ],
+    "unlocks": [
+      {"type": "quest", "id": "clear-mountain-path"}
+    ]
+  },
+  "failure_conditions": [
+    {"type": "player_death", "reset_progress": true}
+  ],
+  "time_limit": null,
+  "dialogue": {
+    "offer": [
+      {
+        "npc": "village-elder",
+        "text": "Hello adventurer. Our village sits at the edge of the Forest of Shadows, and we need to know more about what lies within."
+      },
+      {
+        "npc": "village-elder",
+        "text": "Would you be willing to explore the forest and report back what you find? We're particularly interested in useful resources and any potential dangers."
+      },
+      {
+        "npc": "village-elder",
+        "text": "Be careful though - the forest is home to creatures more dangerous than those around our village."
+      }
+    ],
+    "completion": [
+      {
+        "npc": "village-elder",
+        "text": "Welcome back! Your exploration has provided valuable information about the Forest of Shadows."
+      },
+      {
+        "npc": "village-elder",
+        "text": "The herbs you found will be particularly useful for our healers, and knowing about the landmarks will help other travelers navigate safely."
+      },
+      {
+        "npc": "village-elder",
+        "text": "Here's your reward. I have another task that might interest you now that you're familiar with the forest."
+      }
+    ]
+  },
+  "created_by": "gamemaster",
+  "created_on": "2025-02-10T08:15:30Z",
+  "last_updated": "2025-03-20T18:06:45Z",
+  "version": 1,
+  "active": true
+}
