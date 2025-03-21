@@ -1,0 +1,124 @@
+{
+  "id": "starting-village",
+  "name": "Commit Haven",
+  "description": "A peaceful village nestled between rolling hills, serving as the starting point for new adventurers. The wooden houses and cobblestone streets give it a rustic charm, while the central square buzzes with activity from local merchants and quest-givers.",
+  "difficulty": 1,
+  "discovery_experience": 50,
+  "connected_regions": [
+    "western-plains",
+    "eastern-woods",
+    "southern-path"
+  ],
+  "resources": [
+    "wood",
+    "stone",
+    "herbs",
+    "water"
+  ],
+  "npcs": [
+    "village-elder",
+    "blacksmith",
+    "merchant",
+    "healer",
+    "guard-captain"
+  ],
+  "environment": {
+    "terrain": "grassland",
+    "weather": [
+      "sunny",
+      "cloudy",
+      "light-rain"
+    ],
+    "hazards": []
+  },
+  "points_of_interest": [
+    {
+      "id": "elder-house",
+      "name": "Elder's Abode",
+      "description": "A modest but well-kept cottage where the village elder resides. Players can receive guidance and starter quests here.",
+      "coordinates": [2, 3],
+      "interactions": ["talk", "quest"]
+    },
+    {
+      "id": "forge",
+      "name": "Commit Forge",
+      "description": "The blacksmith's workshop where basic weapons and armor can be purchased or repaired.",
+      "coordinates": [-3, 1],
+      "interactions": ["shop", "repair", "craft"]
+    },
+    {
+      "id": "market",
+      "name": "Merchant Square",
+      "description": "The bustling center of the village where players can trade resources and purchase supplies.",
+      "coordinates": [0, 0],
+      "interactions": ["shop", "trade", "gossip"]
+    },
+    {
+      "id": "healer-hut",
+      "name": "Healing Sanctuary",
+      "description": "A small hut filled with herbs and remedies where players can heal wounds and cure status effects.",
+      "coordinates": [4, -2],
+      "interactions": ["heal", "cure", "rest"]
+    },
+    {
+      "id": "training-grounds",
+      "name": "Guard Training Grounds",
+      "description": "An open area where the village guards practice. New adventurers can learn basic combat skills here.",
+      "coordinates": [-2, -4],
+      "interactions": ["train", "practice", "tutorial"]
+    }
+  ],
+  "enemies": [
+    {
+      "id": "stray-wolf",
+      "name": "Stray Wolf",
+      "level": 1,
+      "hp": 20,
+      "damage": 3,
+      "aggression": "territorial",
+      "spawn_chance": 0.1,
+      "loot_table": ["wolf-pelt", "small-fang"],
+      "experience": 10
+    },
+    {
+      "id": "thief",
+      "name": "Petty Thief",
+      "level": 2,
+      "hp": 25,
+      "damage": 4,
+      "aggression": "passive",
+      "spawn_chance": 0.05,
+      "loot_table": ["copper-coin", "small-dagger"],
+      "experience": 15
+    }
+  ],
+  "quests": [
+    "welcome-to-gitrealm",
+    "missing-supplies",
+    "wolf-threat"
+  ],
+  "events": [
+    {
+      "id": "village-market-day",
+      "name": "Market Day",
+      "description": "Once a week, merchants from neighboring regions visit, offering special items and discounts.",
+      "trigger": "weekly",
+      "duration": 86400,
+      "effects": {
+        "shop_discount": 0.1,
+        "special_items": true,
+        "npc_density": 1.5
+      }
+    }
+  ],
+  "coordinates": {
+    "x_range": [-5, 5],
+    "y_range": [-5, 5]
+  },
+  "metadata": {
+    "created_at": "2025-01-15T00:00:00Z",
+    "updated_at": "2025-03-10T00:00:00Z",
+    "version": 3,
+    "contributors": ["world-builder", "quest-designer"]
+  }
+}
