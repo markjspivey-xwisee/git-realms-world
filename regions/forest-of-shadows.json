@@ -1,0 +1,121 @@
+{
+  "id": "forest-of-shadows",
+  "name": "Forest of Shadows",
+  "description": "A dense, ancient forest where sunlight barely penetrates the canopy. Known for valuable herbs and dangerous creatures.",
+  "difficulty": 2,
+  "recommendedLevel": 3,
+  "coordinates": {
+    "x": 450,
+    "y": 200,
+    "width": 100,
+    "height": 150
+  },
+  "connections": [
+    {
+      "region": "starting-village",
+      "entryPoint": {
+        "x": 450,
+        "y": 200
+      },
+      "requirements": null
+    },
+    {
+      "region": "mountain-pass",
+      "entryPoint": {
+        "x": 550,
+        "y": 250
+      },
+      "requirements": {
+        "quest": "clear-mountain-path"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "id": "shadow-herb",
+      "name": "Shadow Herb",
+      "respawnTime": 1800,
+      "spawns": [
+        {"x": 460, "y": 220},
+        {"x": 490, "y": 240},
+        {"x": 520, "y": 260}
+      ]
+    },
+    {
+      "id": "ancient-wood",
+      "name": "Ancient Wood",
+      "respawnTime": 3600,
+      "spawns": [
+        {"x": 480, "y": 210},
+        {"x": 510, "y": 230}
+      ]
+    }
+  ],
+  "creatures": [
+    {
+      "id": "shadow-wolf",
+      "name": "Shadow Wolf",
+      "level": 4,
+      "health": 40,
+      "attack": 8,
+      "defense": 3,
+      "spawnRate": 0.6,
+      "drops": [
+        {"id": "wolf-fang", "chance": 0.4, "quantity": {"min": 1, "max": 3}},
+        {"id": "wolf-pelt", "chance": 0.7, "quantity": {"min": 1, "max": 1}}
+      ]
+    },
+    {
+      "id": "forest-spider",
+      "name": "Forest Spider",
+      "level": 2,
+      "health": 25,
+      "attack": 5,
+      "defense": 2,
+      "spawnRate": 0.8,
+      "drops": [
+        {"id": "spider-silk", "chance": 0.5, "quantity": {"min": 1, "max": 2}},
+        {"id": "spider-venom", "chance": 0.3, "quantity": {"min": 1, "max": 1}}
+      ]
+    }
+  ],
+  "points_of_interest": [
+    {
+      "id": "ancient-shrine",
+      "name": "Ancient Shrine",
+      "description": "A moss-covered shrine dedicated to a forgotten forest deity.",
+      "coordinates": {"x": 490, "y": 235},
+      "interactions": ["pray", "decipher-runes"],
+      "quest_related": ["forest-deity-blessing"]
+    },
+    {
+      "id": "hunters-cabin",
+      "name": "Abandoned Hunter's Cabin",
+      "description": "A dilapidated cabin, seemingly abandoned in a hurry.",
+      "coordinates": {"x": 510, "y": 250},
+      "interactions": ["search", "rest"],
+      "quest_related": ["missing-hunter"]
+    }
+  ],
+  "discovery_text": "You enter the Forest of Shadows. The dense canopy blocks most of the sunlight, creating an eerie atmosphere. Strange sounds echo through the trees.",
+  "weather": {
+    "default": "misty",
+    "possible": ["misty", "rain", "foggy"],
+    "effects": {
+      "misty": {"visibility": -1},
+      "rain": {"visibility": -1, "creature_activity": 0.8},
+      "foggy": {"visibility": -2, "creature_activity": 1.2}
+    }
+  },
+  "last_updated": "2025-03-01T12:34:56Z",
+  "last_updated_by": "gamemaster",
+  "version": 12,
+  "events": [
+    {
+      "id": "wolf-pack-migration",
+      "probability": 0.2,
+      "trigger": "daily",
+      "description": "A pack of shadow wolves has migrated to a new area of the forest."
+    }
+  ]
+}
